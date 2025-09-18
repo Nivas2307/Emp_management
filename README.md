@@ -4,12 +4,18 @@ An advanced **Employee Management System** built with **React + Node.js + Expres
 This project provides a **secure, modern, and responsive platform** for managing employee data, authentication, and CRUD operations with file uploads.  
 
 ---
-
 ## 🎥 Demo Video
+
+ 
+
+
+
 
 
 https://github.com/user-attachments/assets/eb84069b-6392-4a68-883c-4d20d4f02b00
-[![Watch the video]()  
+
+
+
 
 
 
@@ -49,7 +55,7 @@ It also uses **Axios** for API integration and **CORS middleware** for cross-ori
 ### **Other Tools**
 - 🛠️ Git & GitHub – Version control  
 - 📮 Postman – API testing  
-- ⚡ Vercel + Render/Heroku – Deployment  
+- ⚡ Vercel + Render – Deployment  
 
 ---
 
@@ -77,10 +83,8 @@ It also uses **Axios** for API integration and **CORS middleware** for cross-ori
 - Animated transitions using GSAP.  
 - Protected routes with React Router.  
 - API calls with Axios for smooth data handling.  
-
 ---
 
-## 📂 Project Structure
 
 
 
