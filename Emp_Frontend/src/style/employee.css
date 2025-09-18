@@ -1,4 +1,3 @@
-/*--------------------- General Containers--------------------- */
 .list-top {
   display: flex;
   justify-content: space-between;
@@ -33,7 +32,7 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* space between icon and text */
+  gap: 8px;
   font-size: 14px;
   font-weight: 500;
   transition: background 0.3s;
@@ -46,10 +45,10 @@
 .btn-add-content {
   display: flex;
   align-items: center;
-  gap: 6px; /* icon-text spacing */
+  gap: 6px;
 }
-/* ----------------Table & Employee Rows--------------------------- */
 
+/*--------------------- Table & Employee Rows ---------------------*/
 .table-card {
   background: #fff;
   padding: 10px;
@@ -121,21 +120,18 @@
   color: #666;
 }
 
-
-/* ---------------------------Add/Edit Employee Form----------------------------- */
-
+/*--------------------- Add/Edit Employee Form ---------------------*/
 .form-container {
-  /* border: 1px solid red; */
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
-  padding: 5px;
+  justify-content: space-evenly;
+  padding: 20px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
- 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .page-header {
   width: 100%;
   display: flex;
@@ -165,20 +161,17 @@
   margin: 0;
 }
 
-
-/* ---------------------------- Photo Preview-------------------------- */
-
+/*--------------------- Photo Preview ---------------------*/
 .photo-preview-edit {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 210px;
   border: 2px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
   background: #f9f9f9;
-  margin-top: 50px;
 }
 
 .photo-preview-edit img {
@@ -189,8 +182,6 @@
 }
 
 .photo-placeholder {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,77 +200,67 @@
 }
 
 .view-card img {
+  border: 2px solid darkgreen;
   width: 100%;
   height: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
 
-
-/* ---------------------------Employee Info Grid & Inputs-------------------------- */
-
-
+/*--------------------- Employee Info Grid & Inputs ---------------------*/
 .form-with-photo {
-  /* border: 1px solid blue; */
   display: flex;
   gap: 30px;
   align-items: flex-start;
-  width: 60%;
- margin-left: 150px;
+  width: 90%;
+  margin-left: 10px;
 }
 
-.emp-info-grid {
-  /* border: 1px solid red; */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px;
-  width: 100%;
-}
-
+.emp-info-grid,
 .form-grid {
-  /* border: 1px solid red; */
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
   flex: 1;
+  width: 100%;
   max-width: 100%;
 }
 
 .form-grid input,
 .form-grid select {
-   padding: 10px;
+  padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   color: #333;
-  width: 100%;  
-  box-sizing: border-box;
+  width: 100%;
   background: #f9f9f9;
+  box-sizing: border-box;
 }
 
 .form-grid select {
   color: #555;
 }
 
-.form-grid input[type="file"] {
-  border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 14px;
-  color: #555; 
+.form-group input[readonly] {
+  background: #f3f3f3;
+  color: #555;
+  border: 1px solid #e0e0e0;
 }
 
 .form-group {
-   display: flex;
+  display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
 }
 
 .form-group label {
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 6px;
   color: #333;
+  margin-bottom: 6px;
 }
+
 .form-group input {
   padding: 8px 10px;
   border: none;
@@ -287,10 +268,9 @@
   background: #f9f9f9;
 }
 
-/* --------------------Form Actions & Buttons ----------------------------*/
-
+/*--------------------- Form Actions & Buttons ---------------------*/
 .form-actions {
-   grid-column: span 2; 
+  grid-column: span 2;
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
@@ -325,8 +305,7 @@
   background: #0069d9;
 }
 
-
-/* -------------------------- Search Bar------------------------------- */
+/*--------------------- Search Bar ---------------------*/
 .search-box {
   position: relative;
   display: flex;
@@ -338,12 +317,12 @@
   left: 10px;
   color: #666;
   font-size: 18px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .search-box .search-input {
   width: 250px;
-  padding: 8px 12px 8px 36px; 
+  padding: 8px 12px 8px 36px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
@@ -354,4 +333,281 @@
 .search-box .search-input:focus {
   border-color: blue;
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Hide / Show for responsive */
+.desktop-only {
+  display: block;
+}
+.mobile-fields {
+  display: none;
+}
+
+/*--------------------- MEDIA QUERIES ---------------------*/
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .employee-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .employee-row.header {
+    display: none;
+  }
+
+  .emp-info {
+    flex: 0 0 100px;
+  }
+
+  .emp-thumb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .emp-details {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+
+  .emp-details div {
+    flex: 1 1 45%;
+  }
+
+  .emp-actions {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-top: 8px;
+    gap: 12px;
+  }
+
+  .list-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .list-actions input,
+  .search-box .search-input {
+    width: 100%;
+  }
+
+  .btn-add {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-with-photo {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-left: 0;
+  }
+
+  .photo-preview-edit {
+    width: 160px;
+    height: 190px;
+  }
+
+  .emp-info-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .form-actions {
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .employee-row {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .employee-row.header {
+    display: none;
+  }
+
+  .emp-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .emp-thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .emp-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .emp-details {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .emp-details div {
+    flex: 1 1 45%;
+    font-size: 13px;
+  }
+
+  .emp-actions {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .form-with-photo {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .photo-preview-edit {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .emp-info-grid,
+  .form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    width: 100%;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .employee-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #fff;
+  }
+
+  .list-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px so red; */
+
+  }
+
+  .list-actions {
+    width: 200px;
+  }
+
+  .emp-info {
+    flex: 0 0 60px;
+    text-align: center;
+
+  }
+
+  .emp-thumb {
+    width: 60px;
+    height: 60px;
+
+  }
+.view-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+  .emp-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .emp-details div {
+    font-size: 18px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 4px;
+
+  }
+ 
+
+  .emp-actions {
+    justify-content: center;
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .form-container {
+    padding: 14px;
+  }
+
+  .photo-preview-edit {
+    max-width: 160px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .form-actions {
+    gap: 10px;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    font-size: 14px;
+    padding: 9px;
+  }
 }

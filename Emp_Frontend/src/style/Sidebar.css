@@ -41,3 +41,63 @@
   background-color: #2b8cfc;
   color: #fff;
 }
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    width: 200px;
+    left: -220px; /* Hidden by default */
+    top: 0;
+    height: 100%;
+    z-index: 999;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0; /* Slide in when toggled */
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .nav-link span {
+    font-size: 13px;
+  }
+
+  /* Hamburger button for mobile */
+  .hamburger-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: #2b8cfc;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Optional overlay when sidebar is open */
+  body.sidebar-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 998;
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 481px) {
+  .hamburger-btn {
+    display: none;
+  }
+}

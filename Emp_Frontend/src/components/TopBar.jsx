@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
-import logo from "../assets/RS-logo_vijdj0.webp";
+import logo from "../assets/logo.png";
 import "../style/TopBar.css";
 
 // Icons
@@ -44,7 +44,7 @@ export default function TopBar() {
         <img
           src={logo}
           className="brand-logo"
-          alt="RS-TECH Logo"
+          alt="Logo"
           ref={logoRef}
         />
       </div>

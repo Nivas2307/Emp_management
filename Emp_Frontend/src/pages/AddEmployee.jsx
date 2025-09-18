@@ -136,7 +136,7 @@ export default function AddEmployee() {
               Cancel
             </button>
             <button type="submit" className="btn-save">
-              Add
+               Confirm
             </button>
           </div>
         </form>

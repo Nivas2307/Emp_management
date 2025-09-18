@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "../style/Sidebar.css";
 import { TbMessageFilled } from "react-icons/tb";
-import { HiMiniSquares2X2,HiMiniUsers } from "react-icons/hi2";
+import { HiMiniSquares2X2, HiMiniUsers } from "react-icons/hi2";
 import { FaCalendarAlt } from "react-icons/fa";
 import { gsap } from "gsap";
 
@@ -13,14 +13,12 @@ export default function Sidebar() {
     if (sidebarRef.current) {
       const navItems = sidebarRef.current.querySelectorAll(".nav-link");
 
-      // Massive entrance animation without disappearing
       gsap.fromTo(
         sidebarRef.current,
-        { x: -50, opacity: 0 }, // small offset, won't hide
+        { x: -50, opacity: 0 },
         { x: 0, opacity: 1, duration: 0.8, ease: "power4.out" }
       );
 
-      // Stagger nav items fade in
       gsap.fromTo(
         navItems,
         { y: -10, opacity: 0 },
@@ -47,7 +45,7 @@ export default function Sidebar() {
           </li>
           <li>
             <NavLink to="/dashboard/calendar" className="nav-link">
-              < FaCalendarAlt size={20} className="icon" />
+              <FaCalendarAlt size={20} className="icon" />
               <span>Calendar</span>
             </NavLink>
           </li>
@@ -57,7 +55,7 @@ export default function Sidebar() {
               <span>Messages</span>
             </NavLink>
           </li>
-        </ul> 
+        </ul>
       </nav>
     </aside>
   );

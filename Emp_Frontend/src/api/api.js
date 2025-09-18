@@ -1,4 +1,3 @@
-// src/api/api.js
 import axios from "axios";
 
 const base = import.meta.env.VITE_API || "http://localhost:5000/api";

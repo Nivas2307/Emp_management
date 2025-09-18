@@ -1,4 +1,3 @@
-// src/pages/EditEmployee.jsx
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
@@ -53,8 +52,12 @@ export default function EditEmployee() {
 
         // Fix preview path
         if (data.photo) {
-          const uploadsBase = (import.meta.env.VITE_API || "http://localhost:5000").replace("/api", "");
-          const cleanPhoto = data.photo.replace(/^uploads[\\/]/, "").replace(/\\/g, "/");
+          const uploadsBase = (
+            import.meta.env.VITE_API || "http://localhost:5000"
+          ).replace("/api", "");
+          const cleanPhoto = data.photo
+            .replace(/^uploads[\\/]/, "")
+            .replace(/\\/g, "/");
           setPhotoPreview(`${uploadsBase}/uploads/${cleanPhoto}`);
         } else {
           setPhotoPreview(null);
@@ -67,7 +70,9 @@ export default function EditEmployee() {
     };
 
     loadEmployee();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [id]);
 
   // ---------------- GSAP Animations ----------------
@@ -94,7 +99,13 @@ export default function EditEmployee() {
         gsap.fromTo(
           formRef.current.querySelectorAll(".form-group, .form-actions"),
           { y: 12, autoAlpha: 0.95 },
-          { y: 0, autoAlpha: 1, duration: 0.45, stagger: 0.06, ease: "power2.out" }
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.45,
+            stagger: 0.06,
+            ease: "power2.out",
+          }
         );
       }
     }, containerRef);
@@ -125,7 +136,15 @@ export default function EditEmployee() {
     e.preventDefault();
     try {
       const fd = new FormData();
-      ["name","email","department","designation","project","work_type","status"].forEach(k => {
+      [
+        "name",
+        "email",
+        "department",
+        "designation",
+        "project",
+        "work_type",
+        "status",
+      ].forEach((k) => {
         fd.append(k, form[k] ?? "");
       });
       if (form.photo) fd.append("photo", form.photo);
@@ -160,38 +179,84 @@ export default function EditEmployee() {
         <form className="form-grid" ref={formRef} onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="photo">Photo :</label>
-            <input type="file" id="photo" name="photo" accept="image/*" onChange={handleChange} />
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              onChange={handleChange}
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="name">Name :</label>
-            <input id="name" name="name" value={form.name} onChange={handleChange} placeholder="Enter name" required />
+            <input
+              id="name"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Enter name"
+              required
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Email :</label>
-            <input id="email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="Enter email" required />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Enter email"
+              required
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="department">Department :</label>
-            <input id="department" name="department" value={form.department} onChange={handleChange} placeholder="Enter department" />
+            <input
+              id="department"
+              name="department"
+              value={form.department}
+              onChange={handleChange}
+              placeholder="Enter department"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="designation">Designation :</label>
-            <input id="designation" name="designation" value={form.designation} onChange={handleChange} placeholder="Enter designation" />
+            <input
+              id="designation"
+              name="designation"
+              value={form.designation}
+              onChange={handleChange}
+              placeholder="Enter designation"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="project">Project :</label>
-            <input id="project" name="project" value={form.project} onChange={handleChange} placeholder="Enter project" />
+            <input
+              id="project"
+              name="project"
+              value={form.project}
+              onChange={handleChange}
+              placeholder="Enter project"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="work_type">Work Type :</label>
-            <select id="work_type" name="work_type" value={form.work_type} onChange={handleChange}>
-              <option value="" disabled>Select work type</option>
+            <select
+              id="work_type"
+              name="work_type"
+              value={form.work_type}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                Select work type
+              </option>
               <option value="Office">Office</option>
               <option value="Remote">Remote</option>
               <option value="Hybrid">Hybrid</option>
@@ -200,8 +265,15 @@ export default function EditEmployee() {
 
           <div className="form-group">
             <label htmlFor="status">Status :</label>
-            <select id="status" name="status" value={form.status} onChange={handleChange}>
-              <option value="" disabled>Select status</option>
+            <select
+              id="status"
+              name="status"
+              value={form.status}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                Select status
+              </option>
               <option value="Permanent">Permanent</option>
               <option value="Temporary">Temporary</option>
               <option value="Intern">Intern</option>
@@ -209,8 +281,16 @@ export default function EditEmployee() {
           </div>
 
           <div className="form-actions">
-            <button type="button" className="btn-cancel" onClick={() => navigate("/dashboard")}>Cancel</button>
-            <button type="submit" className="btn-save">Update</button>
+            <button
+              type="button"
+              className="btn-cancel"
+              onClick={() => navigate("/dashboard")}
+            >
+              Cancel
+            </button>
+            <button type="submit" className="btn-save">
+              Update
+            </button>
           </div>
         </form>
       </div>

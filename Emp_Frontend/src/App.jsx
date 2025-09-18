@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
