@@ -25,7 +25,7 @@ exports.signup = async (req, res) => {
         (err, results) => {
           if (err) return res.status(500).json({ message: "DB error", error: err });
 
-          const token = jwt.sign({ id: results.insertId }, process.env.JWT_SECRET, { expiresIn: "1h" });
+          const token = jwt.sign({ id: results.insertId },  process.env.JWT_SECRET, { expiresIn: "1h" });
 
           res.status(201).json({
             success: true,
